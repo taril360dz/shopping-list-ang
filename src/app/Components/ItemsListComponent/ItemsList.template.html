@@ -1,0 +1,5 @@
+<div *ngFor="let chunk of getChunked()" class="d-flex justify-content-around">
+    <div *ngFor="let item of chunk">
+        <ItemElement [item]="item"></ItemElement>
+    </div>
+</div>

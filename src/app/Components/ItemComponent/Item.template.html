@@ -1,0 +1,9 @@
+<div [ngClass]="{'border-primary' : !item.bought, 'border-success' : item.bought}" class="card border-primary mb-3" style="max-width: 18rem;">
+    <div class="card-header">Item ID : {{item.id}}</div>
+    <div [ngClass]="{'text-primary' : !item.bought, 'text-success' : item.bought}" class="card-body text-primary">
+      <h5 class="card-title">{{item.name}}</h5>
+      <p class="card-text">Choose if you want to confirm or delete this item</p>
+      <a (click)="confirmBuy()" *ngIf="!item.bought" class="btn btn-info mx-2">Mark as done !</a>
+      <a (click)="confirmDelete()" class="btn btn-danger">Delete</a>
+    </div>
+  </div>
