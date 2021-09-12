@@ -13,10 +13,21 @@ export class ItemComponent
     constructor(private itemSerive : ItemService){}
 
     confirmBuy(){
-        this.itemSerive.updateBoughtStatus(this.item)
+        try{
+            this.itemSerive.updateBoughtStatus(this.item)
+        } catch(e){
+            // log the error
+        }
     }
     confirmDelete(){
-        this.itemSerive.delete(this.item)
+        try
+        {
+            this.itemSerive.delete(this.item)
+        }
+        catch(e){
+            // log the error
+        }
+        
     }
 }
 

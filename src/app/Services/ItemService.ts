@@ -19,7 +19,7 @@ export class ItemService{
     }
     private update(item : {id:number, name:string, bought:boolean}, newValue : {name:string | undefined , bought:boolean | undefined}){
         let index = this.findIndex(item)
-        if(index < 0) throw new Error("UPDATE : Index of the item not found")
+        if(index < 0 || (newValue.name == undefined && newValue.bought == undefined)) throw new Error("UPDATE : Index of the item not found")
         if(newValue.name != undefined)
             this.items[index].name = newValue.name
         if(newValue.bought != undefined)
